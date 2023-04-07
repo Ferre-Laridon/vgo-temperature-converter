@@ -28,47 +28,16 @@ namespace View
             InitializeComponent();
         }
 
-        private void ConvertCelsius(object sender, RoutedEventArgs e)
+        private void SliderValueChanged(object sender, RoutedEventArgs e)
         {
-            // Get input from textbox and parse to string
-            var input = textBoxCelsius.Text;
-            var celsius = double.Parse(input);
-
-            // Fahrenheit
-            var fahrenheit = celsius / (5.0 / 9) + 32;
-            var fahrenheitRound = Math.Round(fahrenheit);
-            textBoxFahrenheit.Text = fahrenheitRound.ToString();
+            // Get input from slider
+            var input = slider.Value;
 
             // Kelvin
-            var kelvin = celsius + kelvinNumber;
-            textBoxKelvin.Text = kelvin.ToString();
-        }
-
-        private void ConvertFahrenheit(object sender, RoutedEventArgs e)
-        {
-            // Get input from textbox and parse to string
-            var input = textBoxFahrenheit.Text;
-            var fahrenheit = double.Parse(input);
+            textBoxKelvin.Text = input.ToString();
 
             // Celsius
-            var celsius = (fahrenheit - 32) * (5.0 / 9);
-            var celsiusRound = Math.Round(celsius, 2);
-            textBoxCelsius.Text = celsiusRound.ToString();
-
-            // Kelvin
-            var kelvin = celsius + kelvinNumber;
-            var kelvinRound = Math.Round(kelvin);
-            textBoxKelvin.Text = kelvinRound.ToString();
-        }
-
-        private void ConvertKelvin(object sender, RoutedEventArgs e)
-        {
-            // Get input from textbox and parse to string
-            var input = textBoxKelvin.Text;
-            var kelvin = double.Parse(input);
-
-            // Celsius
-            var celsius = kelvin - kelvinNumber;
+            var celsius = input - kelvinNumber;
             var celsiusRound = Math.Round(celsius);
             textBoxCelsius.Text = celsiusRound.ToString();
 
