@@ -21,7 +21,7 @@ namespace ViewModel
             this.Fahrenheit = new TemperatureScaleViewModel(this, new FahrenheitTemperatureScale());
         }
 
-        public double TemperatureInKelvin
+        public Cell<double> TemperatureInKelvin
         {
             get
             {
