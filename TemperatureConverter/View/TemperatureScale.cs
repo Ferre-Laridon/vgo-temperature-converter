@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace View
 {
-    internal interface ITemperatureScale
+    public interface ITemperatureScale
     {
         string Name { get; }
 
