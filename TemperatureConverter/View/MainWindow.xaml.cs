@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -16,8 +18,25 @@ using System.Windows.Shapes;
 
 namespace View
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        private double temperatureInKelvin;
+
+        public double TemperatureInKelvin
+        {
+            get
+            {
+                return temperatureInKelvin;
+            }
+            set
+            {
+                temperatureInKelvin = value;
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TemperatureInKelvin)));
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
