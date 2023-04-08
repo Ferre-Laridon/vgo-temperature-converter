@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ViewModel</RootNamespace>
     <AssemblyName>ViewModel</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cells\Cells.csproj">
-      <Project>{a083dfe4-12ae-4611-80c1-34bacdf6f792}</Project>
+      <Project>{A083DFE4-12AE-4611-80C1-34BACDF6F792}</Project>
       <Name>Cells</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">

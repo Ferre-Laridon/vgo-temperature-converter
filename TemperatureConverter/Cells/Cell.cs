@@ -20,7 +20,7 @@ namespace Cells
         {
             get
             {
-                return this.contents;
+                return contents;
             }
             set
             {
