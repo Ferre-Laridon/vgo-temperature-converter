@@ -18,30 +18,13 @@ using System.Windows.Shapes;
 
 namespace View
 {
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : Window
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        private double temperatureInKelvin;
-
-        public double TemperatureInKelvin
-        {
-            get
-            {
-                return temperatureInKelvin;
-            }
-            set
-            {
-                temperatureInKelvin = value;
-
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TemperatureInKelvin)));
-            }
-        }
-
         public MainWindow()
         {
             InitializeComponent();
 
-            this.DataContext = this;
+            this.DataContext = new ConverterViewModel();
         }
     }
 
